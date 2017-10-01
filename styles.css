@@ -36,7 +36,7 @@ a {
   text-decoration: none;
   color: #14eb43;
 }
-@media (min-width: 48em) {
+@media (min-width: 64em) {
   .wrapper {
     width: 75vw;
     display: flex;
