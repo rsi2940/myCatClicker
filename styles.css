@@ -33,6 +33,7 @@ footer {
   font-size: 0.85em;
   text-align: right;
 }
-footer > span {
+a {
+  text-decoration: none;
   color: goldenrod;
 }
