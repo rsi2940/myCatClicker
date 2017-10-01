@@ -1,0 +1,29 @@
+html,
+body {
+  padding: 0;
+  border: 0;
+  margin: 1.5em;
+  background: beige;
+  box-sizing: border-box;
+  font-family: Molengo, sans-serif;
+}
+.wrapper {
+  width: 100%;
+  display: grid;
+}
+.cat-count,
+p {
+  display: inline;
+}
+#cat-list,
+.cat-name {
+  /* width: 20%; */
+  text-align: center;
+  text-transform: uppercase;
+}
+img {
+  margin: auto;
+  width: 100%;
+}
+.cat {
+}
