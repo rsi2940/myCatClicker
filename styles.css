@@ -31,9 +31,30 @@ footer {
   margin-top: 1em;
   padding: 1em;
   font-size: 0.85em;
-  /* text-align: right; */
 }
 a {
   text-decoration: none;
   color: #14eb43;
+}
+@media (min-width: 48em) {
+  .wrapper {
+    width: 75vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .listWrap {
+    padding-top: 4em;
+    width: 15%;
+    align-self: flex-start;
+  }
+  #cat-list {
+    width: 100%;
+  }
+  .cat {
+    width: 50%;
+  }
+  footer {
+    text-align: right;
+  }
 }
