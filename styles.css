@@ -35,6 +35,9 @@ footer {
   padding: 1em;
   font-size: 0.85em;
 }
+.cat > img {
+  margin-bottom: 0.5em;
+}
 a {
   text-decoration: none;
   color: #14eb43;
@@ -57,6 +60,7 @@ a {
   .cat {
     width: 50%;
   }
+
   footer {
     text-align: right;
   }
