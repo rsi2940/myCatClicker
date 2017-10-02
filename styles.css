@@ -42,6 +42,36 @@ a {
   text-decoration: none;
   color: #14eb43;
 }
+.admin-button {
+  /* position: fixed;
+  top: 100px;
+  left: 16px; */
+  font-size: 1.5em;
+}
+.admin {
+  /* position: fixed;
+  top: 160px;
+  left: 16px; */
+  margin-top: 0.5em;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin > input {
+  margin-bottom: 15px;
+}
+
+.buttons {
+  display: flex;
+}
+
+.button {
+  flex-grow: 1;
+}
+
+.hidden {
+  display: none;
+}
 @media (min-width: 64em) {
   .wrapper {
     width: 75vw;
@@ -63,5 +93,30 @@ a {
 
   footer {
     text-align: right;
+  }
+  .admin-button {
+    position: fixed;
+    top: 100px;
+    left: 16px;
+    font-size: 1.5em;
+  }
+  .admin {
+    position: fixed;
+    top: 160px;
+    left: 16px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .admin > input {
+    margin-bottom: 15px;
+  }
+
+  .buttons {
+    display: flex;
+  }
+
+  .button {
+    flex-grow: 1;
   }
 }

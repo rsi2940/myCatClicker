@@ -20,6 +20,7 @@ const octopus = {
     //initialize views
     catView.init();
     catListView.init();
+    adminView.init();
   },
 
   //getter for model.cats
@@ -37,8 +38,8 @@ const octopus = {
   //increment counter then render
   incrementCounter() {
     model.currentCat.clickCount++;
-
     catView.render();
+    adminView.render();
   }
 };
 
@@ -85,6 +86,7 @@ const catListView = {
       const cat = cats.find(cat => cat.name === e.target.value);
       octopus.currentCat = cat;
       catView.render();
+      adminView.render();
       //this.render();
     });
 
@@ -93,6 +95,38 @@ const catListView = {
   },
 
   render() {}
+};
+
+//premium pro version !!
+const adminView = {
+  init() {
+    // store DOM element for later access
+    this.adminBtn = document.querySelector(".admin-button");
+    this.adminArea = document.querySelector(".admin");
+    this.saveBtn = document.querySelector(".save");
+    this.cancelBtn = document.querySelector(".cancel");
+    this.adminName = document.querySelector("#name");
+    this.adminImg = document.querySelector("#imgUrl");
+    this.adminCount = document.querySelector("#clicks");
+
+    // admin click listener to toggle visibility
+    this.adminBtn.addEventListener("click", () => {
+      this.adminArea.classList.toggle("hidden");
+    });
+
+    // cancel button hides admin area
+    this.cancelBtn.addEventListener("click", () =>
+      this.adminArea.classList.add("hidden")
+    );
+
+    this.render();
+  },
+  render() {
+    const currentCat = octopus.currentCat;
+    this.adminName.value = currentCat.name;
+    this.adminImg.value = currentCat.imgSrc;
+    this.adminCount.value = currentCat.clickCount;
+  }
 };
 
 //initialize
