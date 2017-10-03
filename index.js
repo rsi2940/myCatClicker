@@ -73,28 +73,33 @@ const catListView = {
     //get cats from octopus
     const cats = octopus.cats;
 
-    //loop over cats
-    for (const cat of cats) {
-      //new loop
-      const option = document.createElement("option");
-      option.value = cat.name;
-      option.innerText = cat.name;
-      this.catListEl.appendChild(option);
-    }
     //add listener on select element
     this.catListEl.addEventListener("change", e => {
       const cat = cats.find(cat => cat.name === e.target.value);
       octopus.currentCat = cat;
       catView.render();
       adminView.render();
-      //this.render();
     });
 
     //render this
-    // this.render();
+    this.render();
   },
 
-  render() {}
+  render() {
+    const cats = octopus.cats;
+    // empty the cat list
+    this.catListEl.innerHTML = "";
+
+    //loop over cats
+    for (const cat of cats) {
+      //new loop
+      const option = document.createElement("option");
+      option.value = cat.name;
+      option.innerText = cat.name;
+      this.catListEl.add(option);
+    }
+    this.catListEl.value = octopus.currentCat.name;
+  }
 };
 
 //premium pro version !!
