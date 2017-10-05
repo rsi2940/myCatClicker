@@ -10,40 +10,24 @@
 </head>
 
 <body>
-    <div class="wrapper">
-        <!-- cat selector template -->
-        <div class="listWrap">
-            <select name="cats" id="cat-list"></select>
-        </div>
+    <ul data-bind="foreach: catList">
+        <li data-bind="text: name, click:$parent.setCat"></li>
+    </ul>
 
-        <!-- cat view template -->
-        <div class="cat">
-            <h2 class="cat-name"></h2>
-            <img src="" alt="cute cat" class="cat-img">
-            <p>You Clicked:</p>
-            <div class="cat-count"></div>
-            <p>Times</p>
-        </div>
-
-    </div>
-    <!-- admin template area -->
-    <button class="admin-button">Admin</button>
-    <div class="admin hidden">
-
-        <label for="name">Name:</label>
-        <input type="text" id="name">
-        <label for="imgUrl">ImgURL:</label>
-        <input type="text" id="imgUrl">
-        <label for="clicks">#Clicks:</label>
-        <input type="number" id="clicks">
-        <div class="buttons">
-            <button class="save button">Save</button>
-            <button class="cancel button">Cancel</button>
+    <div data-bind="with: currentCat()">
+        <h2 data-bind="text: name"></h2>
+        <h3 data-bind="text: level"></h3>
+        <div data-bind="text: clickCount"></div>
+        <img src="" alt="cute cat" data-bind="click: $parent.incrementCounter, attr: {src: imgSrc}">
+        <div>
+            <h3>Nicknames:</h3>
+            <ul data-bind="foreach: nicknames">
+                <li data-bind="text: $data"></li>
+            </ul>
         </div>
     </div>
-    <footer>This Cat Clicker is a simple example of Model View Controller in plain JavaScript <span>by
-        <a href="https://github.com/rsi2940">Rishi Khatiwada</a> </span>
-    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
     <script src="index.js"></script>
 </body>
 
